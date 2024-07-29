@@ -166,4 +166,16 @@ export function deleteRecordsByTimeRange(
   return HealthConnect.deleteRecordsByTimeRange(recordType, timeRangeFilter);
 }
 
+export function registerForChangeTokens(): Promise<string> {
+  return HealthConnect.registerForChangeTokens();
+}
+
+export function getChangeToken(): Promise<string> {
+  return HealthConnect.getChangeToken();
+}
+
+export function processChanges(token: string): Promise<{ upsertions: any[], deletions: any[], nextChangesToken: string }> {
+  return HealthConnect.processChanges(token);
+}
+
 export * from './constants';

@@ -11,6 +11,22 @@ class HealthConnectModule internal constructor(context: ReactApplicationContext)
     return NAME
   }
 
+    @ReactMethod
+    fun registerForChangeTokens(promise: Promise) {
+        return manager.registerForChangeTokens(promise)
+    }
+
+    @ReactMethod
+    fun getChangeToken(promise: Promise) {
+        return manager.getChangeToken(promise)
+    }
+
+    @ReactMethod
+    fun processChanges(token: String, promise: Promise) {
+        return manager.processChanges(token, promise)
+    }
+
+
   @ReactMethod
   override fun getSdkStatus(providerPackageName: String, promise: Promise) {
     return manager.getSdkStatus(providerPackageName, promise)

@@ -43,6 +43,11 @@ export interface Spec extends TurboModule {
     recordType: string,
     timeRangeFilter: Object
   ): Promise<void>;
+
+    // New methods for change tokens
+  registerForChangeTokens(): Promise<string>;
+  getChangeToken(): Promise<string>;
+  processChanges(token: string): Promise<{ upsertions: any[], deletions: any[], nextChangesToken: string }>;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('HealthConnect');
