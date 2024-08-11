@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/matinzd/react-native-health-connect#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "test": "jest",
